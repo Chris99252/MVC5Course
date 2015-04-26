@@ -83,5 +83,40 @@ namespace MVC5Course.Controllers
                  + item2.Username + ":" + item2.Password);
         }
 
+        public ActionResult Complex3()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Complex3(
+            [Bind(Prefix="item1")]
+            Simple1ViewModel item)
+        {
+            return Content("Complex3: " + item.Username + ":" + item.Password);
+        }
+
+        public ActionResult Complex4()
+        {
+            var data = from p in db.Client
+                       select new Simple1ViewModel()
+                       {
+                           Username = p.FirstName,
+                           Password = p.LastName,
+                           Age = 18
+                       };
+
+            return View(data.Take(10));
+        }
+
+        [HttpPost]
+        public ActionResult Complex4(IList<Simple1ViewModel> item)
+        {
+            // 請下中斷點檢查 item 的內容
+            return Content("");
+        }
+
+
+
     }
 }
