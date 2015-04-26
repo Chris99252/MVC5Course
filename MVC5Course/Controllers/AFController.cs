@@ -12,10 +12,18 @@ namespace MVC5Course.Controllers
         {
             return View();
         }
-
-        public ActionResult MadeMeWrong()
+        [HandleError(ExceptionType=typeof(ArgumentException), View="Error.Argument")]
+        public ActionResult MadeMeWrong(string type="")
         {
-            throw new Exception("OK");
+            if (type == "1")
+            {
+                throw new ArgumentException("MyBad");
+            }
+            else
+            {
+                throw new Exception("OK");
+            }
+
             return View();
         }
     }
