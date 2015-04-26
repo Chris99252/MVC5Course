@@ -1,0 +1,18 @@
+﻿@model MVC5Course.Models.Product
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Model Binding Index</h2>
+<hr />
+
+Product Name: @Model.ProductName
+
+<hr />
+
+@{
+    //var client = ViewData["MyClient"] as MVC5Course.Models.Client;
+    var client = ViewBag.MyClient as MVC5Course.Models.Client;
+}
+
+Client Name: @client.FirstName

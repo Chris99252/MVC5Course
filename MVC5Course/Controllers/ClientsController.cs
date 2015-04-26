@@ -28,7 +28,9 @@ namespace MVC5Course.Controllers
         {
             var client = repoClient.在首頁取得客戶資料(10);
 
-            return View(client.ToList());
+            ViewData.Model = client.ToList();
+
+            return View();
         }
 
         // GET: Clients/Details/5
