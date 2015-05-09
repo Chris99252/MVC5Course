@@ -2,6 +2,7 @@ namespace MVC5Course.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     
     [MetadataType(typeof(ClientMetaData))]
@@ -16,6 +17,7 @@ namespace MVC5Course.Models
         
         [Required]
         [StringLength(40, ErrorMessage="欄位長度不得大於 40 個字元")]
+        [DisplayName("名")]
         public string FirstName { get; set; }
         
         [StringLength(40, ErrorMessage="欄位長度不得大於 40 個字元")]
