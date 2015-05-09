@@ -26,11 +26,18 @@ namespace MVC5Course.Controllers
         }
 
         // GET: Clients
-        public ActionResult Index()
+        public ActionResult Index(string gender = "M")
         {
-            var client = repoClient.在首頁取得客戶資料(10);
+            var client = repoClient.SearchByGender(gender);
 
             ViewData.Model = client.ToList();
+
+            var genderList = new List<SelectListItem>();
+
+            genderList.Add(new SelectListItem() { Value = "M", Text = "男生" });
+            genderList.Add(new SelectListItem() { Value = "F", Text = "女生" });
+
+            ViewBag.Genders = new SelectList(genderList, "Value", "Text", gender);
 
             return View();
         }

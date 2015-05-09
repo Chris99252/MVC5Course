@@ -38,6 +38,12 @@ namespace MVC5Course.Models
         {
             return this.All().Take(num);
         }
+
+        internal IQueryable<Client> SearchByGender(string gender)
+        {
+            return this.All().Where(p => p.Gender == gender).Take(10);
+        }
+
     }
 
 	public  interface IClientRepository : IRepository<Client>
