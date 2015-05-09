@@ -139,7 +139,9 @@
         var orderList = ViewBag.OrderList as IEnumerable<Order>;
     }
 
-    @Html.Action("Index", "Orders", new { clientId = Model.ClientId })
+    @*@Html.Action("Index", "Orders", new { clientId = Model.ClientId })*@
+
+    @Html.Partial("OrderList", Model.Order.ToList())
 
 
 </div>
