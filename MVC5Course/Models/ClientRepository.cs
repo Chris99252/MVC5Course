@@ -44,6 +44,18 @@ namespace MVC5Course.Models
             return this.All().Where(p => p.Gender == gender).Take(10);
         }
 
+        internal IQueryable<Client> SearchByCity(string city)
+        {
+            if (String.IsNullOrEmpty(city))
+            {
+                return this.All();
+            }
+            else
+            {
+                return this.All().Where(p => p.City == city).Take(10);
+            }
+        }
+
     }
 
 	public  interface IClientRepository : IRepository<Client>
