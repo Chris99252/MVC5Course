@@ -1,4 +1,16 @@
-﻿@{
+﻿@if (IsAjax)
+{
+    Layout = "";
+}
+
+@if (User.Identity.IsAuthenticated)
+{
+    
+}
+
+
+
+@{
     var num = (int[])ViewBag.num;
 }
 
