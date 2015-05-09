@@ -1,0 +1,41 @@
+﻿@{
+    var num = (int[])ViewBag.num;
+}
+
+@foreach (var item in num)
+{
+    @item
+}
+
+@foreach (var item in num)
+{
+    @(item + " ")
+}
+
+<ul>
+@foreach (var item in num)
+{
+  <li>@item</li>
+}
+</ul>
+
+
+
+
+
+
+
+TEST
+
+@DateTime.Now
+
+@if (DateTime.Now.Year != 2015)
+{
+    @:今年
+}
+else
+{
+    <text>
+        非今年
+    </text>
+}

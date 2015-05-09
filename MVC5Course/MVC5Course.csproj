@@ -211,6 +211,7 @@
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Controllers\ViewController.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -449,6 +450,9 @@
     <Content Include="Views\MB\Complex5.cshtml" />
     <Content Include="Views\AF\Error.cshtml" />
     <Content Include="Views\Shared\Error.Argument.cshtml" />
+    <Content Include="Views\View\Index.cshtml" />
+    <Content Include="Views\View\_ViewStart.cshtml" />
+    <Content Include="Views\View\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Base\" />
