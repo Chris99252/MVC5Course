@@ -1,4 +1,25 @@
-﻿@if (IsAjax)
+﻿@{
+    var str = "<script>alert('ok');</script>";
+    var msg = @"你好：
+
+再見！";
+}
+
+<script>
+    alert('@Ajax.JavaScriptStringEncode(msg)');
+</script>
+
+
+<a href="https://www.google.com.tw/maps/place/@HttpUtility.UrlPathEncode(ViewBag.location)">@ViewBag.location</a>
+
+<hr />
+
+
+@*@Html.Raw(str)*@
+
+<hr />
+
+@if (IsAjax)
 {
     Layout = "";
 }

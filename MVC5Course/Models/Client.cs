@@ -11,6 +11,7 @@ namespace MVC5Course.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class Client
     {
@@ -36,6 +37,7 @@ namespace MVC5Course.Models
         public string ZipCode { get; set; }
         public Nullable<double> Longitude { get; set; }
         public Nullable<double> Latitude { get; set; }
+        [ScaffoldColumn(false)]
         public string Notes { get; set; }
         public bool IsDelete { get; set; }
     
