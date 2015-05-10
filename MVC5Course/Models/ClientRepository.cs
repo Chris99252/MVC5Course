@@ -2,14 +2,14 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using System.Data.Entity.Core.Objects;
-	
+
 namespace MVC5Course.Models
-{   
-	public  class ClientRepository : EFRepository<Client>, IClientRepository
-	{
+{
+    public class ClientRepository : EFRepository<Client>, IClientRepository
+    {
         public override IQueryable<Client> All()
         {
-            return base.All().Where(p => p.IsDelete == false);
+            return base.All().Where(p => p.IsDelete == false).OrderBy(p => p.ClientId);
         }
 
         public Client Find(int id)
@@ -58,8 +58,8 @@ namespace MVC5Course.Models
 
     }
 
-	public  interface IClientRepository : IRepository<Client>
-	{
+    public interface IClientRepository : IRepository<Client>
+    {
 
-	}
+    }
 }
