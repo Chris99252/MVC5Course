@@ -36,6 +36,7 @@ namespace MVC5Course.Controllers
             var cityList = repoClient.All().Select(p => new { p.City }).Distinct().ToList();
 
             ViewBag.Cities = new SelectList(cityList, "City", "City", city);
+            ViewBag.city = city;
 
             return View();
         }

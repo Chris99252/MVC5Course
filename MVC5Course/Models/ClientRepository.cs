@@ -52,7 +52,7 @@ namespace MVC5Course.Models
             }
             else
             {
-                return this.All().Where(p => p.City == city).Take(10);
+                return this.All().Where(p => p.City == city);
             }
         }
 
