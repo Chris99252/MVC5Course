@@ -10,7 +10,7 @@
     @Html.ActionLink("新增資料", "Create", "Client", null, new { @class = "item" })
     @*<a href="@Url.Action("Create", "Clients")"></a>*@
 
-    @Html.DropDownList("Citi-es1", ViewBag.Cities as SelectList, "--請選擇城市--")
+    @Html.DropDownList("Cities1", ViewBag.Cities as SelectList, "--請選擇城市--")
     
     <script>
         $(function () {
