@@ -20,9 +20,9 @@
 
     @*@Html.Action("Index", "Orders", new { clientId = Model.ClientId })*@
 
-    @*@Html.Partial("OrderList", Model.Order.ToList())*@
+    @Html.Partial("OrderList", Model.Order.ToList(), new ViewDataDictionary(this.ViewData) { { "index", 1 } })
 
-    @Html.DisplayFor(m => m.Order, "OrderList")
+    @*@Html.DisplayFor(m => m.Order, "OrderList")*@
 
 
 </div>
